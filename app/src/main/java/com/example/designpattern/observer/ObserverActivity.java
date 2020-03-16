@@ -1,23 +1,32 @@
 package com.example.designpattern.observer;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.designpattern.databinding.ActivityObserverBinding;
+
 /**
  * 发布订阅者
  * 即所谓的观察者
+ * layout = activity_observer
  */
 public class ObserverActivity extends AppCompatActivity implements Observer {
+
+    private ActivityObserverBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Subject subject = new Subject();
-        subject.setObserver(this);
-        subject.change();
+        binding = ActivityObserverBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        Subject.getInstance().addObserver(this);
+        binding.editNameBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), EditActivity.class);
+            startActivity(intent);
+        });
     }
 
 
@@ -26,7 +35,7 @@ public class ObserverActivity extends AppCompatActivity implements Observer {
      * 会触发这里
      */
     @Override
-    public void update() {
-
+    public void update(String text) {
+        binding.nameTv.setText(text);
     }
 }
