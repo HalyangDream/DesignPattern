@@ -21,7 +21,7 @@
 
         <activity android:name=".observer.EditActivity" />
 
-        <activity android:name=".factory.FactoryActivity" />
+        <activity android:name=".simplefactory.SimpleFactoryActivity" />
     </application>
 
 </manifest>

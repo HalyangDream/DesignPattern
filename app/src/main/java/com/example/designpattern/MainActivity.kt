@@ -7,8 +7,8 @@ import android.util.Log
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.designpattern.databinding.ActivityMainBinding
-import com.example.designpattern.factory.FactoryActivity
 import com.example.designpattern.observer.ObserverActivity
+import com.example.designpattern.simplefactory.SimpleFactoryActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.factoryTv.setOnClickListener {
-            val intent = Intent(it.context, FactoryActivity::class.java)
+            val intent = Intent(it.context, SimpleFactoryActivity::class.java)
             startActivity(intent)
         }
 

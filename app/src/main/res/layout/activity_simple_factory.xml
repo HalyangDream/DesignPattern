@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".simplefactory.SimpleFactoryActivity">
+
+
+    <EditText
+        android:id="@+id/num_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="请输入第一个数字"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/num_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="请输入第二个数字"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/opera_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="请输入运算符'+','-','*','/'" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="结果:" />
+
+    <Button
+        android:id="@+id/get_result_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取结果" />
+
+</LinearLayout>
